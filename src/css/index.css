@@ -1,0 +1,69 @@
+main{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: aqua;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: azure;
+    border-radius: 9px;
+}
+
+.radio-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    margin: 15px;
+
+    background-color: red;
+}
+
+.label-radio-button{
+    
+    border: 1px transparent;
+    border-radius: 9px;
+
+    text-transform: uppercase;
+    margin:4px;
+
+    padding: 5px;
+
+    background-color: grey;
+}
+
+.label-radio-button input{
+    appearance: none;
+}
+
+.label-people-container{
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.label-people-container input{
+    width: 100%;
+}
+.label-people-container i{
+    position: absolute;
+}
+.label-people-container span{
+    position: absolute;
+}
+
+.bill-container{
+    background-color: yellow;
+    border-radius: 10px;
+}
