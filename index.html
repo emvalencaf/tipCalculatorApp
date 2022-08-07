@@ -12,7 +12,9 @@
     <main>
         <section>
             <form class="form-container" id="formBill">
-                <input type="number" id="billValue" min="0">
+                <h2>Bill</h2>
+                <input type="number" id="billValue" min="0" class="form-input">
+                <h2>Select Tip %</h2>
                 <div class="radio-container">
                     <label for="5%" class="label-radio-button">
                         <input type="radio" name="tip" value="5" id="5%">
@@ -31,9 +33,10 @@
                         custom
                     </label>
                 </div>
+                <h2>Number of people</h2>
                 <label for="numberPeople" class="label-people-container">
                     <i>icon</i>
-                    <input type="number" id="numberPeople" placeholder="number of people" min="0">
+                    <input type="number" id="numberPeople" placeholder="number of people" min="0" class="form-input">
                     <span>0</span>
                 </label>
                 <button>calcular</button>

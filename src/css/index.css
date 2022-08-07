@@ -3,7 +3,8 @@ main{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: aqua;
+    background-color: ghostwhite;
+    border-radius: 10px;
 }
 
 .form-container{
@@ -16,6 +17,11 @@ main{
     border-radius: 9px;
 }
 
+.form-input{
+    width: 100%;
+    border-radius: 7px;
+    outline: none;
+}
 .radio-container{
     display: flex;
     flex-direction: row;
