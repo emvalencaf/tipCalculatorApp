@@ -1,75 +1,118 @@
-main{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background-color: ghostwhite;
-    border-radius: 10px;
+:root{
+    --strongcyan: hsl(172, 67%, 45%);
+    --backgroundColor: hsl(183, 100%, 15%);
+    --primaryFontColor: hsl(186, 14%, 43%);
+    --grayishcyan: hsl(184, 14%, 56%);
+    --primaryBackgroundColor: hsl(185, 41%, 84%);
+    --verylightgrayishcyan: hsl(189, 41%, 97%);
+    --secundaryFontColor: hsl(0, 0%, 100%);
+    
+
 }
 
-.form-container{
+main{
+    background-color: var(--primaryBackgroundColor);
+}
+
+.container-app{
+    background-color: hsl(189, 41%, 97%);
+
+    display: flex;
+    justify-content: center;
+
+    border-radius: 20px;
+    border: 1px solid black;
+
+    max-width: 500px;
+
+    padding: 20px 0px;
+    margin: auto;
+
+    gap:20px;
+}
+
+/* container de input do valor da bill e de pessoas*/
+.container-input{
+
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    background-color: azure;
-    border-radius: 9px;
+    
+    margin-top: 5px;
+    margin-bottom: 20px;
 }
 
-.form-input{
-    width: 100%;
-    border-radius: 7px;
-    outline: none;
+.container-input .input{
+    text-align: right;
 }
-.radio-container{
+
+.container-input .input-placeholder{
+    position: absolute;
+}
+
+/* container de input:radio da porcentagem da gorjeta*/
+
+.container-percent-radio{
     display: flex;
     flex-direction: row;
+
+    flex-wrap: wrap;
+
+    gap:10px;
+    max-width:250px;
+
+    margin: 5px;
+}
+
+.label-radio-percent{
+    background-color: var(--backgroundColor);
+    color:var(--secundaryFontColor);
+
+    flex-grow: 0;
+    display: flex;
+
     align-items: center;
     justify-content: center;
 
-    margin: 15px;
+    border-radius: 5px;
 
-    background-color: red;
+    width: 60px;
+    height: 25px;
+    cursor: pointer;
+
 }
 
-.label-radio-button{
-    
-    border: 1px transparent;
-    border-radius: 9px;
-
-    text-transform: uppercase;
-    margin:4px;
-
-    padding: 5px;
-
-    background-color: grey;
-}
-
-.label-radio-button input{
+.label-radio-percent input[type="radio"]{
     appearance: none;
 }
 
-.label-people-container{
-    position: relative;
+.container-percent-radio .input-custom{
+    text-align: right;
+    width: 60px;
+    height: 25px;
 
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container-percent-radio .input-custom::placeholder{
+    text-align: center;
+}
+
+.container-percent-radio .input-custom.active{
+    cursor: text;
+}
+
+/*container resultado*/
+.tip-result-container{
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
+    flex-direction: column;
 
-.label-people-container input{
-    width: 100%;
-}
-.label-people-container i{
-    position: absolute;
-}
-.label-people-container span{
-    position: absolute;
-}
+    background-color: var(--backgroundColor);
 
-.bill-container{
-    background-color: yellow;
     border-radius: 10px;
+}
+.tip-result-container .result-container-text{
+    position: relative;
 }
