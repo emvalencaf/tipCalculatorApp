@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+/*Cores do site =>  Falta organizar melhor*/
 :root{
     --strongcyan: hsl(172, 67%, 45%);
     --backgroundColor: hsl(183, 100%, 15%);
@@ -6,31 +9,66 @@
     --primaryBackgroundColor: hsl(185, 41%, 84%);
     --verylightgrayishcyan: hsl(189, 41%, 97%);
     --secundaryFontColor: hsl(0, 0%, 100%);
-    
 
 }
-
-main{
+*{
+    font-family: "Space Mono", sans-serif;
+}
+body{
     background-color: var(--primaryBackgroundColor);
-}
+    height: 100vh;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+body h1{
+    text-transform: uppercase;
+    align-self: center;
+}
+header{
+    margin-top:10px;
+}
+/* container principal do app*/
 .container-app{
-    background-color: hsl(189, 41%, 97%);
+    background-color: hsl(0, 0%, 100%);
 
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 
     border-radius: 20px;
-    border: 1px solid black;
 
-    max-width: 500px;
 
-    padding: 20px 0px;
+    width:700px;
+
+    padding: 20px 20px;
     margin: auto;
 
     gap:20px;
 }
+.container-app h2{
+    display: inline;
 
+    font-size: 0.9em;
+}
+/*container da calculadora*/
+.tip-calculator-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 350px;
+    padding: 20px;
+}
+.container-title{
+    display: flex;
+    justify-content: space-between;
+    
+    padding: 5px 10px;
+}
 /* container de input do valor da bill e de pessoas*/
 .container-input{
 
@@ -40,14 +78,33 @@ main{
     
     margin-top: 5px;
     margin-bottom: 20px;
+
+    padding: 5px 10px;
+
 }
 
 .container-input .input{
+    color:hsl(183, 100%, 15%);
+    background-color: hsl(189, 41%, 97%);
+
+    font-weight: bold;
     text-align: right;
+    font-size: 1em;
+    padding: 10px;
+
+    border: none;
+    border-radius: 6px;
+
+}
+
+.container-input .input:focus{
+    outline-color: hsl(172, 67%, 45%);
+    background-color: hsl(185, 41%, 84%);
 }
 
 .container-input .input-placeholder{
     position: absolute;
+    padding: 10px;
 }
 
 /* container de input:radio da porcentagem da gorjeta*/
@@ -62,9 +119,11 @@ main{
     max-width:250px;
 
     margin: 5px;
+    padding: 5px 5px;
 }
 
 .label-radio-percent{
+    font-weight: bold;
     background-color: var(--backgroundColor);
     color:var(--secundaryFontColor);
 
@@ -80,6 +139,18 @@ main{
     height: 25px;
     cursor: pointer;
 
+    padding: 5px;
+}
+
+.label-radio-percent.active{
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+
+}
+
+.label-radio-percent:hover{
+    background-color: hsl(185, 41%, 84%);
+    color:hsl(183, 100%, 15%);
 }
 
 .label-radio-percent input[type="radio"]{
@@ -87,17 +158,26 @@ main{
 }
 
 .container-percent-radio .input-custom{
+    background-color: hsl(185, 41%, 84%);
     text-align: right;
     width: 60px;
     height: 25px;
 
-    border: 1px solid black;
+    border: 1px transparent;
     border-radius: 5px;
+
     cursor: pointer;
+
+    padding: 5px;
 }
 
 .container-percent-radio .input-custom::placeholder{
     text-align: center;
+}
+
+.container-percent-radio .input-custom:focus{
+    outline-color: hsl(172, 67%, 45%);
+    background-color: hsl(185, 41%, 84%);
 }
 
 .container-percent-radio .input-custom.active{
@@ -105,14 +185,53 @@ main{
 }
 
 /*container resultado*/
-.tip-result-container{
+.result-container{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 
     background-color: var(--backgroundColor);
 
     border-radius: 10px;
+
+    width: 250px;
+
+    padding: 20px;
 }
-.tip-result-container .result-container-text{
-    position: relative;
+
+.tip-result-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+
+.result-container-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.result-container-text .title{
+    color:hsl(0, 0%, 100%);
+}
+
+.result-container-text .subtitle{
+    color:hsl(186, 14%, 43%);
+}
+
+.money-text{
+    color: hsl(172, 67%, 45%);
+    font-weight: bold;
+}
+
+.result-container button{
+    background-color: hsl(172, 67%, 45%);
+    color:hsl(183, 100%, 15%);
+
+    outline: none;
+    border: none;
+    
+    text-transform: uppercase;
+    font-weight: bold;
+
+    padding:10px;
 }

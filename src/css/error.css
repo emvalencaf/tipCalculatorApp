@@ -1,0 +1,16 @@
+.error-msg.error-active{
+    font-size: 0.8em;
+    display:inline;
+    color: orangered;
+}
+
+.input.error-active{
+    outline: 1px solid !important;
+    outline-color: orangered !important;
+    background-color: rgba(255, 68, 0, 0.17) !important;
+}
+
+.container-percent-radio.error-active{
+    background-color: rgba(255, 68, 0, 0.17);
+    border-radius: 10px;
+}

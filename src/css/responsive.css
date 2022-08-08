@@ -1,0 +1,7 @@
+@media(max-width: 450px){
+    .container-app{
+        max-width: 300px;
+
+        font-size: 0.8em;
+    }
+}

@@ -6,24 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/src/css/reset.css">
+    <link rel="stylesheet" href="/src/css/responsive.css">
     <link rel="stylesheet" href="/src/css/index.css">
+    <link rel="stylesheet" href="/src/css/error.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <!--
     <link rel="stylesheet" href="/src/css/index.css">-->
 </head>
 <body>
-    <main>
+    <header>
         <h1>Splitter</h1>
+    </header>
+    <main>
         <section class="container-app">
             <div class="tip-calculator-container">
-                <h2 class="title">Bill</h2>
-                <div class="container-input">
-                    <input type="number" id="input-bill" class="input" min="0" placeholder="0">
-                    <span class="input-placeholder">$</span>
+                <div class="container-title">
+                    <h2 class="title">Bill</h2>
+                    <span class="error-msg error-active">can't be zero</span>
                 </div>
-                <h2 class="title">Select Tip %</h2>
-                <div class="container-percent-radio">
-                    <label for="5%" class="label-radio-percent">
+                <div class="container-input">
+                    <input type="number" id="input-bill" class="input error-active" min="0" placeholder="0">
+                    <span class="input-placeholder ">$</span>
+                </div>
+                <div class="container-title">
+                    <h2 class="title">Select Tip %</h2>
+                    <span class="error-msg error-active">you must chose one</span>
+                </div>
+                <div class="container-percent-radio error-active">
+                    <label for="5%" class="label-radio-percent error-active">
                         <span class="input-placeholder">5%</span>
                         <input type="radio" name="radio-percent" value="5"id="5%">
                     </label>
@@ -45,7 +55,9 @@
                     </label>
                     <input type="number" id="percent-custom" placeholder="custom" class="input-custom active">
                 </div>
-                <h2>Number of people</h2><span class="error-msg active">cannot be zero</span>
+                <div class="container-title">
+                    <h2>Number of people</h2><span class="error-msg error-active">can't be zero</span>
+                </div>
                 <div class="container-input">
                     <input type="number" name="" id="input-people" min="0" placeholder="0" class="input">
                     <span class="input-placeholder">
@@ -53,13 +65,22 @@
                     </span>
                 </div>
             </div>
-            <div class="tip-result-container">
-                <div class="result-container-text">
-                    <p>$ 0.00</p>
+            <div class="result-container">
+                <div class="tip-result-container">
+                    <div class="result-container-text">
+                        <span class="title">Tip amount</span>
+                        <span class="subtitle">/ person</span>
+                    </div>
+                    <span class="money-text">$ 0.00</span>
                 </div>
-                <div class="result-container-text">
-                    <p>$ 0.00</p>
+                <div class="tip-result-container">
+                    <div class="result-container-text">
+                        <span class="title">Tip amount</span>
+                        <span class="subtitle">/ total</span>
+                    </div>
+                    <span class="money-text">$ 0.00</span>
                 </div>
+                <button>reset</button>
             </div>
         </section>
         <!--
@@ -99,5 +120,10 @@
             <span>auhduashduhasudhsa</span>
         </aside>-->
     </main>
+    <footer>
+        <p>
+            &copy;2022, Edson Mota Valença Filho
+        </p>
+    </footer>
 </body>
 </html>
