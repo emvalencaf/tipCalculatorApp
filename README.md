@@ -6,6 +6,8 @@
 
  Uma vez preenchido o valor total da conta e número de pessoas e selecionado (ou preeenchido) a porcentagem vai ser mostrado na interface gráfica o valor total de gorjeta e o valor para cada pessoa pagar.
 
+ Esse projeto foi inspirado no desafio [Tip Calculator App](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX/hub/tip-calculator-app-foDW9trUa7) da [Frontend Mentor](https://www.frontendmentor.io/challenges)
+
  ## Conhecimentos utilizados
  - [x] Padrao MVC;
  - [x] Classes;

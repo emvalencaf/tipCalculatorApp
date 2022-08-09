@@ -11,9 +11,8 @@ const tipService = new TipService()
 const tipView = new TipView(containerCalculator, containerResult)
 const tipController = new TipController(tipView, tipService)
 
-console.log(tipView)
 
-function inputEvent(e){
+function inputEvent(){
     tipController.inputBill()
 }
 
@@ -48,7 +47,7 @@ function getLabel(element){
 
     //Reset button
     tipView.resultContainer.querySelector("button").addEventListener("click", e =>{
-        console.log(e.currentTarget)
+
         tipController.reset()
     })
 

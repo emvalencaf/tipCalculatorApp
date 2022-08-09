@@ -23,8 +23,7 @@ export class TipController{
             let obj = this.checkAllInput()
             
             obj = this.service.calculateTip(...Object.values(obj))
-            console.log(obj)
-            
+
             this.view.renderResult(obj)
         
         } catch (error) {
@@ -47,7 +46,6 @@ export class TipController{
      
         if(!this.view.inputCustom.value && !inputRadio) throw new Error("must chosen or set a percent")
         
-        console.log("sucesso")
         return {
             bill: Number(this.view.inputBill.value),
             people: Number(this.view.inputPeople.value),

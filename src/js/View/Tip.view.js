@@ -22,7 +22,7 @@ export class TipView{
     }
 
     renderClickedPercentRadio(label){
-        console.log(label)
+
         this.inputsRadio.forEach(inputRadio => {
 
             if(!inputRadio.checked) inputRadio.parentElement.classList.remove("active")
