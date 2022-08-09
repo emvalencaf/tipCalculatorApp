@@ -4,23 +4,38 @@ export class TipController{
         this.service = service
     }
 
-    getTipValue(billValue, tipsRadio){
+    clickedPercentRadio(radio){
+        this.view.renderClickedPercentRadio(radio)
+    }
 
-        if(typeof billValue !== "number") billValue = Number(billValue)
+    inputBill(){
 
-        this.isBillValueValid(billValue)
+        let obj = this.checkAllInput()
         
-        const tipRadio = tipsRadio.find(radio => radio.checked)
+        if(!obj) return console.log("error")
 
-        this.isTipPercentValid(tipRadio)
+        obj = this.service.calculateTip(...Object.values(obj))
 
+        this.view.renderResult(obj)
+        
     }
 
-    isBillValueValid(billValue){
-        if(!billValue) throw new Error("ERROR: bill value is invalid")
-    }
+    checkAllInput(){
+        if(!this.view.inputBill.value) return null
 
-    isTipPercentValid(tipPercentChecked){
-        if(!tipPercentChecked) throw new Error("ERROR: you must choose one of the tip percent")
+        if(!this.view.inputPeople.value) return null
+
+        const inputRadio = this.view.inputsRadio.find(radio => radio.checked === true)
+
+        if(!inputRadio) return null
+        
+        if(!this.view.inputCustom.value && !inputRadio) return null
+        
+        console.log("sucesso")
+        return {
+            bill: this.view.inputBill.value,
+            people: this.view.inputPeople.value,
+            percent: inputRadio? inputRadio.value : this.view.inputCustom.value
+        }
     }
 }

@@ -1,3 +1,7 @@
+.error-msg{
+    display: none;
+}
+
 .error-msg.error-active{
     font-size: 0.8em;
     display:inline;

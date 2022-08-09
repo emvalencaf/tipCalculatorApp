@@ -22,18 +22,18 @@
             <div class="tip-calculator-container">
                 <div class="container-title">
                     <h2 class="title">Bill</h2>
-                    <span class="error-msg error-active">can't be zero</span>
+                    <span class="error-msg">can't be lower than zero</span>
                 </div>
                 <div class="container-input">
-                    <input type="number" id="input-bill" class="input error-active" min="0" placeholder="0">
+                    <input type="number" id="input-bill" class="input" min="0" placeholder="0">
                     <span class="input-placeholder ">$</span>
                 </div>
                 <div class="container-title">
                     <h2 class="title">Select Tip %</h2>
-                    <span class="error-msg error-active">you must chose one</span>
+                    <span class="error-msg">you must chose one</span>
                 </div>
-                <div class="container-percent-radio error-active">
-                    <label for="5%" class="label-radio-percent error-active">
+                <div class="container-percent-radio">
+                    <label for="5%" class="label-radio-percent">
                         <span class="input-placeholder">5%</span>
                         <input type="radio" name="radio-percent" value="5"id="5%">
                     </label>
@@ -56,7 +56,7 @@
                     <input type="number" id="percent-custom" placeholder="custom" class="input-custom active">
                 </div>
                 <div class="container-title">
-                    <h2>Number of people</h2><span class="error-msg error-active">can't be zero</span>
+                    <h2>Number of people</h2><span class="error-msg">can't be zero</span>
                 </div>
                 <div class="container-input">
                     <input type="number" name="" id="input-people" min="0" placeholder="0" class="input">
@@ -71,14 +71,14 @@
                         <span class="title">Tip amount</span>
                         <span class="subtitle">/ person</span>
                     </div>
-                    <span class="money-text">$ 0.00</span>
+                    <span class="money-text" id="tip-per-person">$0.00</span>
                 </div>
                 <div class="tip-result-container">
                     <div class="result-container-text">
                         <span class="title">Tip amount</span>
                         <span class="subtitle">/ total</span>
                     </div>
-                    <span class="money-text">$ 0.00</span>
+                    <span class="money-text" id="total-tip">$0.00</span>
                 </div>
                 <button>reset</button>
             </div>
@@ -130,5 +130,6 @@
             <abbr title="My portfoil page"><a href="#"><i class="fa-solid fa-address-card fa-2xl"></i></a></abbr>
         </div>
     </footer>
+    <script src="/src/js/index.js" type="module"></script>
 </body>
 </html>
