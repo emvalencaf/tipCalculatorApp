@@ -22,17 +22,17 @@
             <div class="tip-calculator-container">
                 <div class="container-title">
                     <h2 class="title">Bill</h2>
-                    <span class="error-msg">can't be lower than zero</span>
+                    <span class="error-msg" data-error="inputBill">can't be zero or lower than zero</span>
                 </div>
                 <div class="container-input">
-                    <input type="number" id="input-bill" class="input" min="0" placeholder="0">
+                    <input type="number" id="input-bill" class="input" data-error="inputBill" min="0" placeholder="0">
                     <span class="input-placeholder ">$</span>
                 </div>
                 <div class="container-title">
                     <h2 class="title">Select Tip %</h2>
-                    <span class="error-msg">you must chose one</span>
+                    <span class="error-msg" data-error="radio">you must choose or set a percent</span>
                 </div>
-                <div class="container-percent-radio">
+                <div class="container-percent-radio" data-error="radio">
                     <label for="5%" class="label-radio-percent">
                         <span class="input-placeholder">5%</span>
                         <input type="radio" name="radio-percent" value="5"id="5%">
@@ -51,15 +51,15 @@
                     </label>
                     <label for="25%" class="label-radio-percent">
                         <span class="input-placeholder">25%</span>
-                        <input type="radio" name="radio-percent" id="25%">
+                        <input type="radio" name="radio-percent" value="25"id="25%">
                     </label>
                     <input type="number" id="percent-custom" placeholder="custom" class="input-custom active">
                 </div>
                 <div class="container-title">
-                    <h2>Number of people</h2><span class="error-msg">can't be zero</span>
+                    <h2>Number of people</h2><span class="error-msg" data-error="inputPeople">can't be zero</span>
                 </div>
                 <div class="container-input">
-                    <input type="number" name="" id="input-people" min="0" placeholder="0" class="input">
+                    <input type="number" name="" id="input-people" min="0" placeholder="0" class="input" data-error="inputPeople">
                     <span class="input-placeholder">
                         <i class="fa-solid fa-user"></i>
                     </span>
@@ -80,7 +80,7 @@
                     </div>
                     <span class="money-text" id="total-tip">$0.00</span>
                 </div>
-                <button>reset</button>
+                <button disabled>reset</button>
             </div>
         </section>
         <!--

@@ -2,7 +2,7 @@ export class TipService{
     constructor(){}
 
     calculateTip(bill,nPeople, percent){
-
+        console.log(percent)
         const total = percent / 100 * bill
         const perPerson = total / nPeople
 

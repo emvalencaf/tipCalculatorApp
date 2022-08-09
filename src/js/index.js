@@ -14,16 +14,43 @@ const tipController = new TipController(tipView, tipService)
 console.log(tipView)
 
 function inputEvent(e){
-    if(e.currentTarget === tipView.inputBill) return tipController.inputBill()
+    tipController.inputBill()
+}
+
+function getLabel(element){
+    if(element.nodeName === "LABEL") return element
+
+    if(element.nodeName === "INPUT" && element.name === "radio-percent") return element.parentElement
+
+    return null
 }
 
 //Eventos DOM
-tipView.inputBill.addEventListener("input", inputEvent)
-tipView.calculatorContainer.querySelector(".container-percent-radio").addEventListener("click",(e)=>{
-    const label = e.target.nodeName === "LABEL"? e.target : e.target.parentElement
+    //Calcular os valores com o evento input
+    tipView.inputBill.addEventListener("input", inputEvent)
+    tipView.inputPeople.addEventListener("input", inputEvent)
+    tipView.inputCustom.addEventListener("input", inputEvent)
+
+    //Apagar mensagens de error
+    tipView.inputBill.addEventListener("focus", () => tipController.clearError("inputBill"))
+    tipView.inputPeople.addEventListener("focus", () => tipController.clearError("inputPeople"))
+    tipView.inputCustom.addEventListener("focus", () => tipController.clearError("radio"))
+
+    //Colocar a classe active no label (parentElement) do input:radio
+    tipView.calculatorContainer.querySelector(".container-percent-radio").addEventListener("click",(e)=>{
+        
+        const label = getLabel(e.target)
     
-    tipController.clickedPercentRadio(label)
-})
+        if(label) return tipController.clickedPercentRadio(label)
+
+        if(e.target === tipView.inputCustom) return tipController.clearClickedPercentRadio()
+    })
+
+    //Reset button
+    tipView.resultContainer.querySelector("button").addEventListener("click", e =>{
+        console.log(e.currentTarget)
+        tipController.reset()
+    })
 
 /*
 const formBill = document.querySelector("#formBill")

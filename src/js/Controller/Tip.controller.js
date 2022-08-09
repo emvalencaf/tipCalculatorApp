@@ -4,38 +4,60 @@ export class TipController{
         this.service = service
     }
 
-    clickedPercentRadio(radio){
-        this.view.renderClickedPercentRadio(radio)
+    clickedPercentRadio(label){
+
+        this.view.renderClickedPercentRadio(label)
+        this.clearError("radio")
+        if(this.view.inputBill.value && this.view.inputPeople.value) this.inputBill()
+
+    }
+
+    clearClickedPercentRadio(){
+        this.view.clearClickedPercentRadio()
+        this.clearError("radio")
     }
 
     inputBill(){
 
-        let obj = this.checkAllInput()
+        try {
+            let obj = this.checkAllInput()
+            
+            obj = this.service.calculateTip(...Object.values(obj))
+            console.log(obj)
+            
+            this.view.renderResult(obj)
         
-        if(!obj) return console.log("error")
+        } catch (error) {
+            this.view.showError(error.message)
+        }
 
-        obj = this.service.calculateTip(...Object.values(obj))
+    }
 
-        this.view.renderResult(obj)
-        
+    clearError(input){
+        this.view.clearError(input)
     }
 
     checkAllInput(){
-        if(!this.view.inputBill.value) return null
+        
+        if(!this.view.inputBill.value) throw new Error("can't be lower than zero")
 
-        if(!this.view.inputPeople.value) return null
+        if(!this.view.inputPeople.value) throw new Error("can't be zero")
 
         const inputRadio = this.view.inputsRadio.find(radio => radio.checked === true)
-
-        if(!inputRadio) return null
-        
-        if(!this.view.inputCustom.value && !inputRadio) return null
+     
+        if(!this.view.inputCustom.value && !inputRadio) throw new Error("must chosen or set a percent")
         
         console.log("sucesso")
         return {
-            bill: this.view.inputBill.value,
-            people: this.view.inputPeople.value,
-            percent: inputRadio? inputRadio.value : this.view.inputCustom.value
+            bill: Number(this.view.inputBill.value),
+            people: Number(this.view.inputPeople.value),
+            percent: inputRadio? Number(inputRadio.value) : Number(this.view.inputCustom.value)
         }
+    }
+
+    reset(){
+        
+        this.view.clear()
+
     }
 }
