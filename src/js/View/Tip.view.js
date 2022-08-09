@@ -22,9 +22,12 @@ export class TipView{
 
         this.inputsRadio.forEach(inputRadio => {
             inputRadio.parentElement.classList.remove("active")
-            inputRadio.checked = false
         })
 
-        if(radio !== this.inputCustom) return radio.classList.add("active")
+        if(radio === this.inputCustom) {
+            this.inputsRadio.find(inputRadio => inputRadio.checked).checked = false
+        }
+        
+        return radio.classList.add("active")
     }
 }
