@@ -3,7 +3,7 @@
 }
 
 .error-msg.error-active{
-    font-size: 0.8em;
+    font-size: 0.6em;
     display:inline;
     color: orangered;
 }

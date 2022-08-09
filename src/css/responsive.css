@@ -1,7 +1,20 @@
-@media(max-width: 450px){
+@media(max-width: 540px){
     .container-app{
         max-width: 300px;
 
         font-size: 0.8em;
+    }
+    .container-percent-radio{
+        width: 200px;
+    }
+}
+
+@media(max-width: 300px){
+    .container-app{
+        max-width: 200px;
+        font-size: 0.6em;
+    }
+    footer{
+        font-size:0.6em;
     }
 }

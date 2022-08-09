@@ -14,6 +14,8 @@
  - [x] Iteração de array e objetos;
 
  ## features
- -[x] Faz o cálculo automático, uma vez cumprida os requisitos, do valor de gorjeta de acordo com o número de pessoas, percentual de gorjeta e valor total da conta, informados;
- -[x] Mostra as informações que estão faltando por meio da aplicação de css
- -[x] Botão de reset para limpar as informações do DOM
+ - [x] Faz o cálculo automático, uma vez cumprida os requisitos, do valor de gorjeta de acordo com o número de pessoas, percentual de gorjeta e valor total da conta, informados;
+ - [x] Mostra as informações que estão faltando por meio da aplicação de css
+ - [x] Botão de reset para limpar as informações do DOM
+
+ ## [clique aqui](https://emvalencaf.github.io/tipCalculatorApp/) para calcular acessar calcular quanto você e seus amigos vão pagar de gorjeta

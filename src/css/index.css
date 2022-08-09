@@ -112,8 +112,11 @@ header{
 /* container de input:radio da porcentagem da gorjeta*/
 
 .container-percent-radio{
+    align-self: center;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
 
     flex-wrap: wrap;
 
