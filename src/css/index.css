@@ -262,3 +262,9 @@ footer p{
 footer div{
     gap:20px;
 }
+.fa-brands, .fab{
+    color: var(--backgroundColor);
+}
+.fa-solid, .fas{
+    color: var(--backgroundColor);
+}
